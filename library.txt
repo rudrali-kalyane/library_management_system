@@ -1,0 +1,29 @@
+
+### 1. **Manage Student**
+   - **Add Student**: A form to input student details (e.g., `student_id`, `name`, `email`, etc.), saving the data in a MySQL database.
+   - **Update Student**: Fetch student details by `student_id`, allow changes, and update the database.
+   - **Delete Student**: Remove a student record from the database by `student_id`.
+
+### 2. **Manage Book**
+   - **Add Book**: Add new book details (e.g., `book_id`, `title`, `author`, `quantity`, etc.) into the database.
+   - **Update Book**: Search for a book using `book_id` or `title`, and update the details.
+   - **Delete Book**: Delete a book record from the database.
+
+### 3. **Book Issue**
+   - Ensure that books are issued only if they are available (`quantity > 0`).
+   - Store issue details, such as `student_id`, `book_id`, `issue_date`, and `due_date`.
+
+### 4. **Return Book / Lost Book**
+   - **Return Book**: Update the book's availability by increasing the quantity in the database.
+   - **Lost Book**: Mark a book as lost, reduce the quantity permanently, and add a penalty to the student's account.
+
+### 5. **Penalty Management**
+   - **Delayed Return**: Calculate the penalty based on the number of overdue days.
+   - **Lost Book Penalty**: Add the book’s price as a penalty to the student’s account.
+
+### Database Tables:
+You can create tables like:
+- `students(student_id, name, email, phone)`
+- `books(book_id, title, author, quantity, price)`
+- `issued_books(issue_id, student_id, book_id, issue_date, due_date, return_date, status)`
+- `penalties(student_id, total_penalty)`
